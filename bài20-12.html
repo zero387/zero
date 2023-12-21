@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //bai1:
+        let tuoi=prompt('nhập tuổi');
+        let T=parseInt(tuoi);
+        if(T>=18){
+            console.log("bạn trên 18 tuổi");
+        }else{
+            console.log('bạn không đủ 18 tuổi');
+        }
+        //bài2:
+        let gio=prompt('nhập giờ');
+        let time=paseInt(gio);
+        if (time<=18){
+            console.log('Good day');
+        }else{
+            console.log('Good evening');
+        }
+        //bai3:
+        let gio2=prompt('nhập giờ');
+        let time2=parseInt(gio2);
+        if(time2<10){
+            console.log('Good morning')
+        }else if(time2>=10,time2<20){
+            console.log('Good day');
+        }else {
+            console.log('Good everning');
+        }
+        //bai4: 
+        let a=prompt('nhập số');
+        let A=parseInt(a);
+        if (A % 2 == 0){
+            console.log(`số ${A} là số chẵn`);
+        }else {
+            console.log(`số ${A} là số lẻ`);
+        }
+        //bai5:
+        let b= +prompt('nhập số lần 1');
+        switch (b % 2){
+            case 0:
+                console.log('số chẵn');
+                break;
+            case 1:
+                console.log('số lẻ');
+                break;
+            default:
+                console.log('số bạn nhập không phải số nguyên');
+                break;
+        }
+        //bài6:
+        let d=prompt("mời nhập mầu");
+        let e ="xanh",f ="đỏ",g="vàng";
+        if (d===e){
+            console.log('màu xanh');
+        }else if(d===f){
+            console.log('màu đỏ');
+        }else if(d===g){
+            console.log('màu vàng');
+        }else {
+            console.log('màu không hợp lệ');
+        }
+        //bai7: 
+        let h=+prompt("nhập number");
+        if (isNaN(h)){
+            console.log('đừng lừa tao');
+        }else {
+                switch(true){
+                    case (h<0):
+                        console.log('số âm');
+                    break;
+                    case (h==0):
+                        console.log('số không');
+                    break;
+                    case (h>0):
+                        console.log('số dương');
+                    break;
+                    default:
+                        console.log('số bạn nhập là gì ấy');
+                        break;
+                }
+        } 
+        //bài8:
+        let width=+prompt('chiều cao(m)'), kg=+prompt('cân nặng(kg)');
+        let BMI=kg/width**2;
+        let aaa=prompt('theo who trọn 1. theo idi&who trọn 2');
+        let aa=parseInt(aaa);
+        if (a=1){
+        
+            if (BMI < 18.5){
+            console.log('Gầy');
+            } else if (BMI >= 18.5 && BMI < 25) {
+                console.log('Bình thường');
+            } else if (BMI >= 25 && BMI < 30) {
+            console.log('Thừa cân - tiền béo phì');
+            } else if (BMI >= 30 && BMI < 35) {
+                console.log('Thừa cân - béo phì độ I');
+            } else if (BMI >= 35 && BMI < 40) {
+                console.log('Thừa cân - béo phì độ II');
+            } else {
+                console.log('Thừa cân - béo phì độ III');
+            }
+        }else if (BMI < 18.5){
+            console.log('Gầy');
+            } else if (BMI >= 18.5 && BMI < 23) {
+                console.log('Bình thường');
+            } else if (BMI >= 23 && BMI < 25) {
+            console.log('Thừa cân - tiền béo phì');
+            } else if (BMI >= 25 && BMI < 30) {
+                console.log('Thừa cân - béo phì độ I');
+            } else if (BMI >= 30 ) {
+                console.log('Thừa cân - béo phì độ II');
+            } 
+        //bài9:
+        let a=+prompt('toán'),b=+prompt('lý'),c=+prompt('hóa'),
+        d=+prompt('văn'),e=+prompt('sử');f=+prompt('địa');
+        let dtb=(a+b+c+d+e+f)/6;
+        if(dtb>=8 && dtb<=10){
+            console.log('Giỏi');
+        }else if(dtb>=6.5 && dtb<=7.9){
+            console.log('khá');
+        }else if(dtb>=5 && dtb<=6.4){
+            console.log('trung bình');
+        }else {
+            console.log('yếu');
+        }
+        //bài10:
+        var a=+prompt("mời nhập tháng");
+        switch (a){
+            case 1:
+                console.log('31 ngày');
+            break;
+            case 2:
+                console.log('30 ngày');
+            break;
+            case 3:
+                console.log('31 ngày');
+            break;
+            case 4:
+                console.log('28 ngày');
+            break;
+            case 5:
+                console.log('31 ngày');
+            break;
+            case 6:
+                console.log('31 ngày');
+            break;
+            case 7:
+                console.log('30 ngày');
+            break;
+            case 8:
+                console.log('30 ngày');
+            break;
+            case 9:
+                console.log('30 ngày');
+            break;
+            case 10:
+                console.log('31 ngày');
+            break;
+            case 11:
+                console.log('30 ngày');
+            break;
+            case 12:
+                console.log('31 ngày');
+            break;
+        }
+    </script>
+</body>
+</html>
