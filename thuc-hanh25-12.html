@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        while (true){
+        let todoList= ["Go to school at 7am", "Read book at 12 am"];
+        let aa=prompt('nhap chu cai');
+        switch (aa) {
+            case "c":
+                let c=prompt("nhập công việc");
+                todoList.push(c);
+                console.log(todoList);
+                break;
+            case "r":
+                console.log(todoList);
+                break;
+            case "u":
+                let viTri=+prompt("bạn nhập vị trí muốn cập nhập");
+                let u=prompt("nội dung muốn thêm");
+                todoList.splice(viTri, 0, u);
+                console.log(todoList);
+                break;
+            case "d":
+                let xoa=+prompt('vị trí bạn muốn xóa');
+                todoList.splice(xoa,1,);
+                console.log(todoList);
+            case "e":
+                console.log('kết thúc');
+            default:
+            console.log("Không hợp lệ");
+                break;
+        }
+        if(aa="e"){
+            if(prompt("bạn có muốn tiếp tục yes/no")!="yes")
+            break;
+        }
+    }
+
+
+    </script>
+</body>
+</html>
