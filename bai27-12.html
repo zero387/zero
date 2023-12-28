@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //bai1:
+        function soBe(a, b, c) {
+            let d;
+            if (a > b) {
+                if (a > c) {
+                    d = a;
+                    console.log(d);
+                } else {
+                    d = c;
+                    console.log(d);
+                }
+
+            } else if (b < c) {
+                d = c;
+                console.log(d);
+            } else {
+                d = b;
+                console.log(d);
+            }
+        }
+        soBe(2, 9, 8);
+
+        //bai2:
+        function soNguyenTo(a) {
+            if (a > 0) {
+                for (let i = 2; i < a; i++) {
+                    if (a % i != 0) {
+                        console.log(a + ' la so nguyen to');
+                    } else {
+                        console.log(a + " khong la so nguyen to");
+                        break;
+                    }
+                }
+            } else {
+                console.log('nhập số dương đi')
+            }
+        }
+        soNguyenTo(13);
+        //bai3:
+        function giaiThua(a) {
+            let d = 1;
+            for (i = 1; i <= a; i++)
+                d *= i;
+            console.log(d);
+        }
+        giaiThua(5);
+        //bài 4:
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function tongMuoi() {
+            for (let i = 0; i < arr.length; i++) {
+                for (let b = i + 1; b < arr.length; b++) {
+                    if (i + b === 10) {
+                        console.log(`${i} va ${b}`);
+                    }
+                }
+            }
+        }
+        tongMuoi();
+        //BAI5
+        let aa = prompt('mời nhập chữ')
+        let aaa = aa.split(' ').join('').split('');
+        console.log(aaa);
+        for (let bb = 0; bb < aaa.length; bb++) {
+            let dd = 1;
+            for (let cc = bb + 1; cc <= aaa.length; cc++) {
+                if (aaa[bb] === aaa[cc]) {
+                    dd++;
+                    aaa.splice(cc, 1);
+                }
+            }
+            if (aaa[bb] !== "") {
+                console.log(`${aaa[bb]} là ${dd}`);
+            }
+        }
+    </script>
+</body>
+
+</html>
