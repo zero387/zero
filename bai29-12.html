@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="" id="inputs">
+    <button onclick="sendNumber()">gửi</button>
+    <script>
+        function sendNumber() {
+            let Number1 = document.getElementById('inputs').value;
+            let Number2 = Number1.split("");
+
+            console.log(Number2);
+            /* //bai 1
+            let Number3 = [];
+            for (let i = 0; i < Number2.length; i++) {
+                let count = 0;
+                for (let k = i + 1; k < Number2.length; k++) {
+                    if (Number2[i] === Number2[k]) {
+                        Number2.splice(k, 1);
+                        count++;
+                    }
+                }
+                if (count == 0) {
+                    Number3.push(Number2[i]);
+                }
+            }
+            console.log(Number3);
+            let max = Number3[0];
+            for (let m = 1; m < Number3.length; m++) {
+                if (Number3[m] > max) {
+                    max = Number3[m];
+                }
+            }
+            console.log(max); */
+            //bai 2:
+       /*  let Number3=[];
+        for (let i = 0; i < Number2.length; i++) {
+            let count=0;
+            for(let k=2;k<Number2[i];k++){
+                if(Number2[i]%k==0){
+                    count++;
+            }
+                }
+            if(count==0&&Number2[i]!=1&&Number2[i]!=0){
+                Number3.push(Number(Number2[i]));
+            }
+            }
+            console.log(Number3);
+            let sum = 0;
+            for (let h = 0; h < Number3.length; h++) {
+                sum += Number3[h];
+                
+            }
+            console.log(sum); */
+            //bai 4:
+/*             let Number4 = Number2.filter(item => isNaN(item)).join('');
+            console.log(Number4); */
+            //bai5:
+  /*           let Number5=Number1.split('').reverse('');
+            console.log(Number5); */
+        }
+        //bai 3:
+        let array1=[
+            [' ','*','*',' ','*','*',' ',],
+            ['*',' ',' ','*',' ',' ','*',],
+            ['*',' ',' ',' ',' ',' ','*',],
+            [' ','*',' ',' ',' ','*',' ',],
+            [' ',' ','*',' ','*',' ',' ',],
+            [' ',' ',' ','*',' ',' ',' ',]
+        ]
+        for (let i = 0; i < array1.length; i++) {
+            console.log(array1[i].join('   '));
+            
+        }
+    </script>
+</body>
+
+</html>
