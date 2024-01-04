@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="nhap ten san pham" id="input">
+    <button onclick="addToCart()">mua</button>
+    <!-- 
+
+     -->
+    <script>
+        let students = [
+            {
+                name: 'hoa',
+                age: 25,
+                id: 12
+            },
+            {
+                name: 'hong',
+                age: 25,
+                id: 13
+            },
+            {
+                name: 'nhung',
+                age: 25,
+                id: 14
+            },
+            {
+                name: 'van',
+                age: 26,
+                id: 15
+            }
+        ]
+        /* xóa phần tử có id=13
+            cập nhập thuộc tính address vào đối tượng có id=14
+            cập nhập thuộc tính name thành ánh của id =15 */
+        for (let i = 0; i < students.length; i++) {
+            if (students[i].id === 13) {
+                delete students[i].id;
+                break;
+            }
+
+        }
+        console.log(students);
+        for (let i = 0; i < students.length; i++) {
+            if (students[i].id === 14) {
+                students[i].address = '';
+                break;
+            }
+
+        }
+        console.log(students);
+        for (let i = 0; i < students.length; i++) {
+            if (students[i].id === 15) {
+                students[i].name = 'anh';
+                break;
+            }
+
+        }
+        console.log(students);
+
+
+        let store = [
+            {
+                name: 'iphone5',
+                price: 50000,
+                id: 5
+            },
+            {
+                name: 'iphone6',
+                price: 60000,
+                id: 6
+            },
+            {
+                name: 'iphone7',
+                price: 70000,
+                id: 7
+            },
+            {
+                name: 'iphone8',
+                price: 80000,
+                id: 8
+            }
+        ];
+        let car = [];
+        function addToCart() {
+            let inputValue = document.getElementById('input').value;
+            let count = -1;
+            for (let i = 0; i < store.length; i++) {
+                if (store[i].name == inputValue) {
+                    count = i;
+                    break;
+                }
+            }
+            if (count === -1) {
+                console.log('san pham ko ton tai')
+                return;
+            }
+
+            let foundIndex = -1;
+
+            for (let i = 0; i < car.length; i++) {
+                if (car[i].name === inputValue) {
+                    foundIndex = i;
+                    break;
+                }
+            }
+
+            if (foundIndex === -1) {
+                car.push({ ...store[count], soluong: 1 });
+            } else {
+                car[foundIndex].soluong++;
+            }
+
+            console.log(car);
+            let a=0;
+            for (let k = 0; k < car.length; k++) {
+                
+                a += car[k].price*car[k].soluong;
+            }
+            console.log(a);
+        }
+        //đi mua hàng rồi tính tiền
+        //kiểm tra xem sản phẩm có trong cửa hàng không
+        //kiểm tra xem sản phẩn đang mua có trong giỏ hàng không
+        //nếu có tăng số lượng
+        //không có thì thêm vào giỏ hàng
+
+    </script>
+</body>
+
+</html>
