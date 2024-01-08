@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bàn phím</title>
+    <style>
+        .max {
+            background-color: rgb(64, 64, 64);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .apha, .beta, .mega, .spach {
+            display:flex;
+            justify-content: center;
+            
+
+        }
+        .hang1, .hang2, .hang3, .spach {
+        color: aliceblue;
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        background-color: rgb(64, 64, 64);
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin: 7px;
+    }
+    .spach{
+        width: 400px;
+        margin: auto;
+    }
+    .inp{
+        width: 700px;
+        height: 150px;
+        background-color: rgb(64, 64, 64);
+        border: 10px intset rgb(88, 81, 81);
+        margin-left: 36%;
+        
+    }
+    </style>
+</head>
+<body>
+<div class="max">
+    <textarea class="inp" id="inpu"></textarea>
+    <div class="apha">
+        <button class="hang1" onclick="sen('Q')">Q</button>
+        <button class="hang1" onclick="sen('W')">W</button>
+        <button class="hang1" onclick="sen('E')">E</button>
+        <button class="hang1" onclick="sen('R')">R</button>
+        <button class="hang1" onclick="sen('T')">T</button>
+        <button class="hang1" onclick="sen('Y')">Y</button>
+        <button class="hang1" onclick="sen('U')">U</button>
+        <button class="hang1" onclick="sen('I')">I</button>
+        <button class="hang1" onclick="sen('O')">O</button>
+        <button class="hang1" onclick="sen('P')">P</button>
+    </div>
+    <div class="beta">
+        <button class="hang2" onclick="sen('A')">A</button>
+        <button class="hang2" onclick="sen('S')">S</button>
+        <button class="hang2" onclick="sen('D')">D</button>
+        <button class="hang2" onclick="sen('F')">F</button>
+        <button class="hang2" onclick="sen('G')">G</button>
+        <button class="hang2" onclick="sen('H')">H</button>
+        <button class="hang2" onclick="sen('J')">J</button>
+        <button class="hang2" onclick="sen('K')">K</button>
+        <button class="hang2" onclick="sen('L')">L</button>
+    </div>
+    <div class="mega">
+        <button class="hang3" onclick="sen('Z')">Z</button>
+        <button class="hang3" onclick="sen('X')">X</button>
+        <button class="hang3" onclick="sen('C')">C</button>
+        <button class="hang3" onclick="sen('V')">V</button>
+        <button class="hang3" onclick="sen('B')">B</button>
+        <button class="hang3" onclick="sen('N')">N</button>
+        <button class="hang3" onclick="sen('M')">M</button>
+    </div>
+    <button class="spach" onclick="sen(' ')"></button>
+
+</div>
+<script>
+ function sen(a) {
+            const B = document.getElementById('inpu');
+            B.value += a;
+            console.log(B);
+        }
+</script>
+</body>
+</html>

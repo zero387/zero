@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>hello</h1>
+    <button onclick="click1()">hide text</button>
+    <button onclick="click2()">show text</button>
+    <script>
+        function click1(){
+            let a=document.getElementsByTagName('h1');
+            a[0].style.display='none'
+        }
+        function click2(){
+            let a=document.getElementsByTagName('h1');
+            a[0].style.display='';
+        }
+    </script>    
+</body>
+</html>

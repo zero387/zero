@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form1 {
+            width: 1000px;
+            height: 500px;
+            background-color: rgb(255, 255, 255);
+            margin: 0px auto;
+        }
+        .form2 {
+            width: 1000px;
+            height: 150px;
+            background-color: rgb(233, 157, 122);
+            position: relative;
+
+        }
+        .form3 {
+            font-size: 30px;
+            position: absolute;
+            margin: 30px 410px;
+
+        }
+        .in {
+            width: 650px;
+            height: 30px;
+            margin-top: 45px;
+            margin-left: 45px;
+            border: 7px rgb(255, 255, 255);
+            background-color: rgb(238, 238, 238);
+
+        }
+        .form4 {
+            width: 239px;
+            height: 32px;
+            position: absolute;
+            margin-top: -32px;
+            margin-left: 698px;
+            border: 1px rgb(255, 255, 255);
+            background-color: rgb(202, 212, 209);
+
+        }
+        .in1 {
+            height: 40px;
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+        }
+        .in1>input {
+            width: 45px;
+            height: 40px;
+            margin: 0px;
+            background-color: antiquewhite;
+            border-color: antiquewhite;
+        }
+        .in1>label {
+            width: 910px;
+            height: 40px;
+            background-color: antiquewhite;
+            display: flex;
+            align-items: center
+        }
+        .in1>button {
+            width: 45px;
+            height: 40px;
+            border: none;
+            position: absolute;
+            margin: 0px 0px 0px 952px;
+            background-color: antiquewhite;
+        }
+        .n1 {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="form1">
+        <div class="form2">
+            <label for="1" class="form3">My To Do List</label><br>
+            <input type="text" placeholder="Title..." class="in" id="one"><br>
+            <button class="form4" onclick="addButton()">Add</button>
+        </div>
+        <div id="addAll">
+            <div class="in1">
+                <input type="checkbox" onclick="Up(1)">
+                <label id="del1" class=""></label>
+                <button onclick="del(1)">X</button>
+            </div>
+            <div class="in1">
+                <input type="checkbox" onclick="Up(2)">
+                <label id="del2" class=""></label>
+                <button onclick="del(2)">X</button>
+            </div>
+            <div class="in1">
+                <input type="checkbox" onclick="Up(3)">
+                <label id="del3" class=""></label>
+                <button onclick="del(3)">X</button>
+            </div>
+            <div class="in1">
+                <input type="checkbox" onclick="Up(4)">
+                <label id="del4" class=""></label>
+                <button onclick="del(4)">X</button>
+            </div>
+            <div class="in1">
+                <input type="checkbox" onclick="Up(5)">
+                <label id="del5" class=""></label>
+                <button onclick="del(5)">X</button>
+            </div>
+            <div class="in1">
+                <input type="checkbox" onclick="Up(6)">
+                <label id="del6" class=""></label>
+                <button onclick="del(6)">X</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function addButton() {
+            let title = document.getElementById('one').value;
+            let a = document.querySelectorAll('.in1 label');
+            console.log(title);
+            console.log(a);
+            for (let i = 0; i < a.length; i++) {
+                if (a[i].innerHTML === "") {
+                    a[i].innerHTML = title;
+                    break;
+                }
+            }
+        }
+        function del(b) {
+            switch (b) {
+                case 1:
+                    let a = document.getElementById('del1');
+                    a.innerHTML = '';
+                    break;
+                case 2:
+                    let b = document.getElementById('del2');
+                    b.innerHTML = '';
+                    break;
+                case 3:
+                    let c = document.getElementById('del3');
+                    c.innerHTML = '';
+                    break;
+                case 4:
+                    let d = document.getElementById('del4');
+                    d.innerHTML = '';
+                    break;
+                case 5:
+                    let f = document.getElementById('del5');
+                    f.innerHTML = '';
+                    break;
+                case 6:
+                    let g = document.getElementById('del6');
+                    g.innerHTML = '';
+                    break;
+                default:
+                    break;
+            }
+        }
+        function Up(c) {
+            switch (c) {
+                case 1:
+                    let a = document.getElementById('del1');
+                    a.classList.toggle('n1');
+                    break;
+                case 2:
+                    let b = document.getElementById('del2');
+                    b.classList.toggle('n1');
+                    break;
+                case 3:
+                    let c = document.getElementById('del3');
+                    c.classList.toggle('n1');
+                    break;
+                case 4:
+                    let d = document.getElementById('del4');
+                    d.classList.toggle('n1');
+                    break;
+                case 5:
+                    let f = document.getElementById('del5');
+                    f.classList.toggle('n1');
+                    break;
+                case 6:
+                    let g = document.getElementById('del6');
+                    g.classList.toggle('n1');
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
