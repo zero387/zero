@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+           <input type="text" id="name"><br>
+           <input type="text" id="email"><br>
+           <input type="text" id="phone"><br>
+           <input type="text" id="contryside"><br>
+           <input type="text"><br>
+           <input type="text"> 
+           <button onclick="saveInfo()">lưu</button>
+    <table border="1" cellpadding="5px">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>Điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Gender</th>
+                <th>Hành động</th>
+                <th>Sắp xếp (alpha b)</th>
+            </tr>
+        </thead>
+        <tbody id="tboody">
+
+        </tbody>
+    </table>
+    <script>
+
+        //function tạo id
+        function newId() {
+            return Math.floor(Math.random() * 90000);
+        }
+        //lấy dữ liệu mảng user trên local về
+        let data = JSON.parse(localStorage.getItem('users')) || [];
+        // function lưu thông tin sinh viên
+        function saveInfo() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let phone = document.getElementById('phone').value;
+            let countryside = document.getElementById('contryside').value;
+            let gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
+            //tạo đối tượng sinh viên gồm các thuộc tính tên email số điện thoại quê quán gới tính và id
+            let info = {
+                name: name,
+                email: email,
+                phone: phone,
+                country: countryside,
+                gender: gender,
+                id: newId(),
+            }
+            data.push(info);
+            //sau khi push vào xong thì lưu dữ liệu trên local lại
+            localStorage.setItem("users", JSON.stringify(data));
+            //sau khi lưu infor xong rồi thì gọi hàm renderUser
+            renderUser();
+        }
+        //tạo hàm render
+        function renderUser() {
+            let elm = "";
+            for (let i = 0; i < data.length; i++) {
+                elm += `
+                        <tr>
+                            <td>${i+1}</td>
+                            <td>${data[i].name}</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                        </tr>
+               `
+
+            }
+            console.log(elm);
+            document.getElementById('tboody').innerHTML = elm;
+        }
+        renderUser();
+    </script>
+</body>
+
+</html>
