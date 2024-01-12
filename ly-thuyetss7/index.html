@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>storing data in the browser</h1>
+    <!-- Storing data ing the browser
+    (lưu trữ dữ liệu phía client hay phía browser) 
+        1.localstorage
+            -dữ liệu khi lưu sẽ không bị mất đi (khi F5 đóng tab hay tắt máy không mất)
+            -dung lựng dữ liệu lưu được 5-10mb tùy từng máy
+            1Mb = 1024B;
+
+        2.sessionstorage
+            - phiên làm việc (dữ liệu sẽ mất đi khi đóng tab)
+            - dung lượng tầm 3-5MB
+        3.cookie
+            - tương tác với sever
+            - dung lượng 3-5Kb
+            -thường lưu token từ server trả về để duy trì đăng nhập, thực hiện tác vụ
+            - có thể set thời gian sống cho nó.
+-->
+<script>
+    /* /* // lưu trữ dữ liệu local
+    // **lưu là set - lấy về là get**
+    localStorage.setItem('chung','tuan anh');
+    localStorage.setItem('key',5);//luwu
+    /* localStorage.removeItem('chung');//xoa
+    localStorage.clear;//xoa het */
+    /* localStorage.getItem('chung','minh'); */
+    /* let result=localStorage.getItem('chung'); */// lay ve (get)
+    /* console.log(result); */
+    //xóa : localStorage.removeItem('chung')
+    //**xóa hết dùng: localStorage.clea */r */
+
+    // lưu trữ dữ liệu sesstion
+    /* sessionStorage.getItem('age',20); */
+
+    //khi lưu dữ liệu dạng array hoặc object thì phải chuyển sang dạng JSON để lưu
+
+    let obj = {
+        name:'chung'
+    }
+    localStorage.setItem('studen',JSON.stringify(obj));// chuyển dữ liệu array và object lên sesstion
+    let reddd=JSON.parse(localStorage.getItem('studen'));// lấy về từ sesstion
+    console.log(reddd);
+
+    //chuyển trang
+    window.location.href='./set-get.html'
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>làm đăng ký đăng nhập</title>
+</head>
+<style>
+    form{
+        margin-left: 50%;
+        display: inline-block;
+        box-shadow: -1px 1px 15px 5px rgb(219, 180, 180);
+    }
+    input, label, button, h2 {
+        margin: 5px;
+    }
+</style>
+<body>
+    <!-- làm đăng ký đăng nhập lưu vào local-storage -->
+    <!-- - tạo mảng đăng ký
+    xác định khi đăng ký tài khoán có bao nhiều field
+    username
+    email
+    pass
+    confirm pass -->
+    <form>
+        <h2>đăng ký</h2>
+        <div>
+            <label for="username">tên đăng nhập</label><br>
+            <input type="text" id="username">
+        </div>
+        <div>
+            <label for="email">email</label><br>
+            <input type="email" id="gmail">
+        </div>
+        <div>
+            <label for="pass">password</label><br>
+            <input type="password" id="pass">
+        </div>
+        <div>
+            <label for="confirmpass">confirm password</label><br>
+            <input type="password" id="passw">
+        </div>
+        <div>
+            <button onclick="clickOne()">đăng lý</button>
+        </div>
+    </form>
+    <script>
+        let users = JSON.parse(localStorage.getItem('user')) || [];
+        function clickOne() {
+            let aa = JSON.parse(localStorage.getItem('user'));
+            let name = document.getElementById('username').value;
+            let email = document.getElementById('gmail').value;
+            let password = document.getElementById('pass').value;
+            let user = {
+                name: name,
+                email: email,
+                password: password,
+            };
+            let checkEmail = -1
+            for (let i = 0; i < users.length; i++) {
+                if (email === aa[i].email) {
+                    checkEmail = 1;
+                    console.log('email chung');
+                    break;
+                }
+            }
+            if (checkEmail === -1) {
+                users.push(user);
+                window.location.href='./dangnhap.html';
+                localStorage.setItem('user', JSON.stringify(users));
+            }
+            console.log(users);
+        }
+    </script>
+</body>
+
+</html>

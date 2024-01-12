@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>đăng nhập</title>
+</head>
+<style>
+.box {
+margin: 0px 50%;
+    display: inline-block;
+    box-shadow: -1px 1px 15px 5px rgb(219, 180, 180);
+    }
+    input, label, button, h2 {
+        margin: 5px;
+    }
+</style>
+<body>
+    
+    <form class="box">
+        <h2>đăng nhập</h2>
+    <div>
+        <label for="inputName">username</label><br>
+        <input type="text" id="inputName">
+    </div>
+    <div>
+        <label for="inputPass">password</label><br>
+        <input type="password" id="inputPass">
+    </div>
+    <button class="button" onclick="Unlock()">Unlock</button>
+    </form>
+    <script>
+        function Unlock() {
+            let usercheck = document.getElementById('inputName').value;
+            let passCheck = document.getElementById('inputPass').value;
+            let a = JSON.parse(localStorage.getItem('user'));
+            console.log(a);
+            let check=0;
+            for (let i = 0; i < a.length; i++) {
+                if (a[i].name === usercheck && a[i].password === passCheck){
+                    check=1;
+                }
+            }
+            if (check===1){
+                window.location.href='./trangchu.html';
+            }else{
+                alert('Tên đăng nhập hoặc mật khẩu không đúng');
+        }
+    }
+    </script>
+</body>
+</html>
