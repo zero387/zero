@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = [
+            {
+                a:'name',
+                salary:30
+            },
+            {
+                a:'name1',
+                salary:40
+            }
+        ];
+        function sumSalaray(aaa) {
+            let totalSalaries = aaa.map(employee => employee.salary);
+                return totalSalaries.reduce((total, salary) => total + salary, 0);
+        };
+
+        let totalSalary = sumSalaray(a);
+            console.log(totalSalary);
+    </script>
+</body>
+</html>

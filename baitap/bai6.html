@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          @keyframes moveCircle {
+            0% {
+                left: 0;
+                top: 0;
+            }
+            50% {
+                left: 1000px ;
+                top: 0;
+            }
+            100% {
+                left: 0;
+                top: 0;
+            }
+        }
+        .stop-animation {
+            animation-play-state: paused !important;
+        }
+        div {
+            color: #ff00b7;
+            display: flex;
+            justify-content: center;
+            width: 100px;
+            height: 20px;
+            border: 2px solid #ff00b7;
+            box-shadow: 0px 0px 10px #ff00f2,
+                        0px 0px 10px  #ff00f2 inset;
+            position: relative;
+            animation: moveCircle 0.08s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>chỉ cần bạn click chúng thì sẽ có</h2>
+    <div onclick="stopAnimation()">mời bạn ấn</div>
+
+    
+    <script>
+        let numbers = [3, 7, 1, 9, 4, 5];
+       function name(params) {
+         let lonNhat=params.reduce(function (a,b) {
+           return b>a ? b : a ;
+         },params[0])
+         return lonNhat;
+       }
+    console.log(name(numbers));
+    function stopAnimation() {
+            var element = document.querySelector('div');
+            element.classList.toggle('stop-animation');
+        }
+    </script>
+    
+</body>
+</html>
