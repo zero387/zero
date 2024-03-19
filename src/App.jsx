@@ -1,65 +1,59 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { up1 } from './redux-toolkit/reducers/counter';
+import { addTodo,deleteJob } from './redux-toolkit/reducers/todolist';
 
-export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      id: [
-        495658456,
-        904390432,
-        489230432,
-        489238952,
-        489032894,
-        432523523,
-        545325253,
-        532643646,
-        623463246,
-        634234235,
-      ],
-      inputValue:'',
-      errorId:''
-    };
-  }
-inputChange=(event)=>{
-  
-this.setState({
-  inputValue:event.target.value,
-  errorId:''
-});
-}
-checkId = (event1) => {
-  event.preventDefault(); // Ngăn chặn sự kiện mặc định của form
 
-  if (this.state.id.includes(parseInt(this.state.inputValue, 10))) {
-    this.setState({
-      errorId: 'Id đã tồn tại'
-    });
-    alert='id da ton tai'
-  } else {
-    this.setState((prevState) => ({
-      id: [...prevState.id, parseInt(this.state.inputValue, 10)],
-      inputValue: '', // Reset trường nhập sau khi thêm thành công
-      errorId: '' // Reset lỗi
-    }));
-    alert='id da duo'
-  }
-}
 
-  render() {
-    console.log(this.state.id, this.state.inputValue);
-    return (
-      <>
-        <form action="">
-          <label htmlFor="">Id của bạn</label><br></br>
-          <input type="number"
-          value={this.state.inputValue}
-          onChange={(event)=>this.inputChange(event)}
-          /><br></br>
-          <input type="submit" value="Submit" 
-            onClick={(event1)=>this.checkId(event1)}
-          />
-        </form>
-      </>
-    );
+export default function App() {
+  const [data, setData] = useState({
+    name:"",
+    id:''
+  });
+  const count = useSelector((state) => {
+    console.log(state);
+    return state;
+  });
+  const dispatch = useDispatch();
+
+  const increaseCounter = () => {
+    dispatch(up1());
+  };
+
+  const addToDoList = () => {
+    dispatch(addTodo(data));
+  };
+
+  const handleChange = (e) => {
+    setData({...data,name:e.target.value,id: Math.floor(Math.random()*100000)});
+  };
+
+  const deleteJob1=(id)=>{
+      // bạn có muốn xóa không 
+      //console.log(id);
+      //const check1 = confirm('bạn có muốn xóa hay không')
+      //console.log(check1);
+
+      dispatch(deleteJob(id))
+      
   }
+  return (
+    <div>
+      <p>Counter value: {count.counter11.value}</p>
+      <button onClick={increaseCounter}>Increase Counter</button>
+      <input type="text" onChange={handleChange} />
+      <button onClick={addToDoList}>Add to To Do List</button>
+      <ul>
+        {count.todolist11.map((item,index)=>{
+        return <li key={index}>
+                  {item.name}  <button
+                          onClick={()=>deleteJob1(item.id)}
+                          >delete</button>
+              </li>
+        
+      })}
+      </ul>
+      
+    </div>
+  );
 }
