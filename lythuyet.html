@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        cách kiểu dữ liệu khác
+            union có thể nhận nhiều kiểu dữ liệu
+                let a: string | number 
+                    a = 4
+                    a='fjds'
+            type alias  bí danh tức là đặt tên cho kiểu dữ liệu
+                type Aliases:string | number;
+                let a: Aliases = 4;
+                let a: Aliases = 'fjds';
+                let a: Aliases = 4;
+            unknow 
+                funtion test (a:unknow){
+                    if (typeof a === 'string'){
+                        console.log(a.length);
+                    }else
+                    if (typeof a === 'number'){
+                        console.log(a.toFixed(2));
+                    }
+                }
+
+            never dùng trong các function xử lý các vòng lặp vô tận
+                    function neverr ():never{
+                        let count = 0  
+                        while(true){
+                            count++;
+                            console.log(count);
+                        }
+                    }
+            tuples
+                let a: [string, number];
+                a = ['fjds', 4];
+                a = [4, 'fjds'];
+            
+            enum
+                enum Color {
+                    Red,
+                    Green,
+                    Blue
+                }
+                let a: Color = Color.Red;
+                let b: Color = Color.Green;
+                let c: Color = Color.Blue;
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                enum Color {
+                    Red = 1,
+                    Green,
+                    Blue
+                }
+                let a: Color = Color.Red;
+                let b: Color = Color.Green;
+                let c: Color = Color.Blue;
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                enum Color {
+                    Red = 1,
+                    Green = 2,
+                    Blue = 3
+                }
+                let a: Color = Color.Red;
+                let b: Color = Color.Green;
+                let c: Color = Color.Blue;
+                console.log(a);
+
+            intersection là kiểu kết hợp &&
+                type A={
+                    a: string;
+                    id:number
+                }
+                type B={
+                    b: string;
+                }
+                type c = A&B;
+                let person:c={
+                    a: 'fjds',
+                    id: 4,
+                    b: 'fjds'
+                }
+
+
+     -->
+</body>
+</html>
